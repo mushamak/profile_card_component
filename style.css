@@ -12,30 +12,38 @@ body {
     height: 100vh;
     background-color: hsl(185, 75%, 39%);
 }
-.top {
+svg{
+    overflow: visible;
     position: absolute;
-    transform: scale(1);
-    left: 3rem;
-    top: 0;
 }
-.bottom {
-    position: absolute;
+svg.top {
+    /* transform: scale(1); */
+    left: 0;
+    top: 0;
+    width: calc(480px*2);
+    height: calc(480px*2);
+}
+svg.bottom {
     bottom: 0;
     right: 0;
-    transform: scale(1);
+    width: 713px;
+    height: 589px;
+    /* transform: scale(0.8); */
 }
 .main_card {
     background-color: #fff;
-    width: 450px;
-    height: 500px;
+    width: 420px;
+    max-width: 80%;
+    height: 420px;
     border-radius: 20px;
     overflow: hidden;
     display: grid;
     z-index: 1;
+    margin: 0 auto;
 }
 .bg_img {
-    width: 100%;
     background-image: url(./images/bg-pattern-card.svg);
+    background-repeat: round;
     height: 80%;
 }
 img {
@@ -50,42 +58,41 @@ img {
     /* width: 50%; */
     height: 80%;
 }
-span {
+h3 span {
     color: hsl(227, 10%, 46%);
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 400;
-    font-size: 28px;
-    padding: 6px;
+    font-size: 22px;
+    padding: 8px;
 }
 h3 {
     color: hsl(229, 23%, 23%);
     position: relative;
     top: 50%;
-    /* text-align: center;
-    justify-content: center; */
-    font-size: 30px;
+    font-size: 25px;
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 700;
     padding: 6px;
 }
 h2 {
-    font-size: 18px;
     color: hsl(229, 23%, 23%);
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 22px;
     position: relative;
-    top: 50px;
+    top: 40px;
 }
-.center p {
+.center span {
     position: relative;
-    top: 60%;
+    top: 50%;
+    color: hsl(227, 10%, 46%);
+    font-family: "Kumbh Sans", sans-serif;
 }
 p {
     color: hsl(227, 10%, 46%);
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 18px;
     position: relative;
     top: 55px;
 }
@@ -101,38 +108,19 @@ p {
 }
 
 @media screen and (max-width: 375px) {
-    body {
-        min-height: 667px;
+    svg.top, svg.buttom {
+        height: 250px;
+        width: 250px;
     }
-    .main_card {
-        display: grid;
-        height: 70vh;
-        width: 92%;
+    svg ellipse {
+        rx: 250px;
+        ry: 250px;
     }
-    h2 {
-        font-size: 18px;
+    svg.top ellipse{
+        transform: translate(-550px, -450px);
     }
-    h3 {
-        font-size: 18px;
-    }
-    span {
-        font-size: 18px;
-    }
-    p {
-        font-size: 18px;
-    }
-    img {
-        width: 40%;
-    }
-    .top {
-        transform: scale(1);
-        position: absolute;
-        left: 0%;
-    }
-    .bottom {
-        width: 55%;
-        height: 60%;
-        position: absolute;
+    svg.bottom ellipse{
+        transform: scale(1, -1) rotate(44deg, 1750, 350);
     }
 }
 
